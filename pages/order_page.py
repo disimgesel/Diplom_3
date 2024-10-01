@@ -23,7 +23,6 @@ class OrderPage(BasePage):
     def id_order_displayed_feed(self, order_id):
         locator = (OrderPageLocators.ORDER_CARD_IN_FEED[0],
                    OrderPageLocators.ORDER_ID_FEED[1].format(order_id=order_id))
-        wait = self.wait_visibility_element(locator)
         return self.check_element_is_displaying(locator)
 
     @allure.step('Заказы, выполненные за все время')
